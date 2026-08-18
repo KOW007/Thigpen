@@ -52,6 +52,10 @@ h1, h2, h3 {
 
 section { padding-block: clamp(3.5rem, 8vw, 6.5rem); }
 
+/* Clear the sticky header so anchor jumps land on the section's first line,
+   not underneath it. */
+section[id] { scroll-margin-top: 84px; }
+
 .eyebrow {
   font-family: var(--head);
   text-transform: uppercase;
