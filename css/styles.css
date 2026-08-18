@@ -169,7 +169,7 @@ section[id] { scroll-margin-top: 84px; }
 }
 .hero::before {
   content: ''; position: absolute; inset: 0;
-  background: url('../assets/img/hero.jpg') center/cover no-repeat;
+  background: url('../assets/img/angus-wheat.jpg') center/cover no-repeat;
   opacity: .5;
 }
 .hero::after {
