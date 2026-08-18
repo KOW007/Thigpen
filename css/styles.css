@@ -170,11 +170,12 @@ section[id] { scroll-margin-top: 84px; }
 .hero::before {
   content: ''; position: absolute; inset: 0;
   background: url('../assets/img/wheat-field.jpg') center/cover no-repeat;
-  opacity: .5;
 }
+/* Scrim: dark enough to keep the headline legible, light enough to read as a
+   photograph. */
 .hero::after {
   content: ''; position: absolute; inset: 0;
-  background: linear-gradient(180deg, rgba(13,33,32,.5), rgba(13,33,32,.82));
+  background: linear-gradient(180deg, rgba(13,33,32,.42), rgba(13,33,32,.58));
 }
 .hero .wrap { position: relative; z-index: 1; }
 .hero .eyebrow { color: var(--sage); }
@@ -182,6 +183,7 @@ section[id] { scroll-margin-top: 84px; }
   font-size: clamp(2.4rem, 6.5vw, 4.4rem);
   letter-spacing: .08em;
 }
+.hero h1, .hero p.tag, .hero .eyebrow { text-shadow: 0 2px 16px rgba(13,33,32,.65); }
 .hero p.tag {
   font-family: var(--head); font-weight: 200;
   text-transform: uppercase; letter-spacing: .2em;
