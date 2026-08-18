@@ -21,12 +21,39 @@ document.getElementById('year').textContent = new Date().getFullYear();
 const form = document.getElementById('contact-form');
 const note = document.getElementById('form-note');
 
+const loadedAt = Date.now();
+
 form.addEventListener('submit', (e) => {
   e.preventDefault();
+
+  // Bots fill the hidden field. Report success so they don't retry.
+  if (form.elements.website.value !== '') {
+    note.textContent = 'Thanks for submitting!';
+    form.reset();
+    return;
+  }
 
   if (!form.checkValidity()) {
     note.textContent = 'Please fill in every field with a valid email address.';
     form.reportValidity();
+    return;
+  }
+
+  // Nobody reads the page and types a message in under three seconds.
+  if (Date.now() - loadedAt < 3000) {
+    note.textContent = 'That came through a little too fast — please try again.';
+    return;
+  }
+
+  const message = form.elements.message.value.trim();
+
+  if (message.length < 10) {
+    note.textContent = 'Please add a bit more detail to your message.';
+    return;
+  }
+
+  if ((message.match(/https?:\/\/|www\./gi) || []).length > 1) {
+    note.textContent = 'Please remove the links from your message and try again.';
     return;
   }
 

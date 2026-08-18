@@ -165,6 +165,13 @@
           <label for="message">Write a message</label>
           <textarea id="message" name="message" required></textarea>
         </div>
+
+        <!-- Honeypot: hidden from people, commonly auto-filled by bots. -->
+        <div class="hp" aria-hidden="true">
+          <label for="website">Website</label>
+          <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
+        </div>
+
         <button class="btn" type="submit">Submit</button>
         <p class="form-note" id="form-note" role="status" aria-live="polite"></p>
       </form>
