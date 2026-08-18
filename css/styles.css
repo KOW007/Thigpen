@@ -194,6 +194,8 @@ section[id] { scroll-margin-top: 84px; }
 
 /* ---------- about / split ---------- */
 
+.about { background: var(--sand); }
+
 .split {
   display: grid; gap: clamp(2rem, 5vw, 4.5rem);
   grid-template-columns: 1fr 1fr; align-items: center;
