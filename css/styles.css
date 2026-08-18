@@ -188,22 +188,6 @@ section { padding-block: clamp(3.5rem, 8vw, 6.5rem); }
 .hero-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
 .hero-location { margin: 2.25rem 0 0; }
 
-/* ---------- entities ---------- */
-
-.entities { background: var(--sand); }
-.entities .grid {
-  display: grid; gap: 2.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  text-align: center;
-}
-.entities h3 { font-size: 1.35rem; color: var(--ink); }
-.entities .role {
-  font-size: .78rem; letter-spacing: .18em; text-transform: uppercase;
-  color: var(--pine); margin: .6rem 0 .9rem; font-family: var(--head);
-}
-.entities a { display: block; text-decoration: none; font-size: 1.05rem; color: var(--pine-deep); }
-.entities a:hover { text-decoration: underline; }
-
 /* ---------- about / split ---------- */
 
 .split {
@@ -227,8 +211,20 @@ section { padding-block: clamp(3.5rem, 8vw, 6.5rem); }
   border: 1px solid rgba(219,218,208,.22);
   padding: 2.25rem 1.85rem;
 }
-.card h3 { font-size: 1.2rem; margin-bottom: .9rem; }
+.card h3 { font-size: 1.2rem; margin-bottom: .4rem; }
 .card p { margin: 0; color: var(--sand); font-size: .97rem; }
+
+.card .card-role {
+  font-family: var(--head); text-transform: uppercase;
+  letter-spacing: .18em; font-size: .74rem; color: var(--sage);
+  margin: 0 0 1rem;
+}
+.card .card-contact {
+  margin-top: 1.35rem; padding-top: 1.1rem;
+  border-top: 1px solid rgba(219,218,208,.22);
+}
+.card .card-contact a { color: var(--cream); text-decoration: none; overflow-wrap: anywhere; }
+.card .card-contact a:hover { text-decoration: underline; }
 
 /* ---------- jobs ---------- */
 
