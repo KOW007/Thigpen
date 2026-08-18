@@ -186,6 +186,7 @@ section { padding-block: clamp(3.5rem, 8vw, 6.5rem); }
   margin: 1.25rem 0 2.25rem;
 }
 .hero-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+.hero-location { margin: 2.25rem 0 0; }
 
 /* ---------- entities ---------- */
 
