@@ -1,0 +1,307 @@
+/* Thigpen Livestock Company — home page styles */
+
+:root {
+  --cream:      #FFFDFB;
+  --sand:       #DBDAD0;
+  --sage:       #A8B8AE;
+  --sage-mid:   #80A09F;
+  --pine:       #4F7170;
+  --pine-deep:  #285A5B;
+  --ink:        #0D2120;
+  --amber:      #AA7B33;
+  --grey:       #999997;
+
+  --wrap: 1180px;
+  --pad: clamp(1.25rem, 5vw, 4rem);
+  --head: 'Oswald', 'Arial Narrow', sans-serif;
+  --body: 'Roboto', -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 17px;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: var(--pine-deep); }
+
+h1, h2, h3 {
+  font-family: var(--head);
+  font-weight: 400;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  line-height: 1.15;
+  margin: 0;
+}
+
+.wrap {
+  max-width: var(--wrap);
+  margin-inline: auto;
+  padding-inline: var(--pad);
+}
+
+section { padding-block: clamp(3.5rem, 8vw, 6.5rem); }
+
+.eyebrow {
+  font-family: var(--head);
+  text-transform: uppercase;
+  letter-spacing: .22em;
+  font-size: .78rem;
+  color: var(--pine);
+  margin: 0 0 .9rem;
+}
+
+.rule {
+  width: 64px; height: 2px; border: 0;
+  background: var(--amber);
+  margin: 1.25rem 0 1.75rem;
+}
+.rule.center { margin-inline: auto; }
+
+.center { text-align: center; }
+.lede { font-size: 1.075rem; color: #3a4746; max-width: 62ch; }
+.center .lede { margin-inline: auto; }
+
+/* ---------- buttons ---------- */
+
+.btn {
+  display: inline-block;
+  font-family: var(--head);
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  font-size: .85rem;
+  padding: .95rem 2.1rem;
+  border: 2px solid var(--pine-deep);
+  background: var(--pine-deep);
+  color: var(--cream);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background .18s ease, color .18s ease, border-color .18s ease;
+}
+.btn:hover { background: var(--ink); border-color: var(--ink); }
+
+.btn--ghost { background: transparent; color: var(--pine-deep); }
+.btn--ghost:hover { background: var(--pine-deep); color: var(--cream); }
+
+.btn--light { background: transparent; border-color: var(--cream); color: var(--cream); }
+.btn--light:hover { background: var(--cream); color: var(--ink); }
+
+/* ---------- header ---------- */
+
+.topbar {
+  background: var(--ink);
+  color: var(--sage);
+  font-size: .8rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  font-family: var(--head);
+}
+.topbar .wrap {
+  display: flex; flex-wrap: wrap; gap: .4rem 1.75rem;
+  align-items: center; justify-content: center;
+  padding-block: .6rem;
+}
+.topbar a { color: var(--sage); text-decoration: none; }
+.topbar a:hover { color: var(--cream); }
+
+.site-header {
+  position: sticky; top: 0; z-index: 50;
+  background: var(--cream);
+  border-bottom: 1px solid var(--sand);
+}
+.site-header .wrap {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 1.5rem; padding-block: .85rem;
+}
+
+.brand { display: flex; align-items: center; gap: .85rem; text-decoration: none; color: inherit; }
+.brand img { height: 52px; width: auto; }
+.brand b {
+  font-family: var(--head); font-weight: 500;
+  text-transform: uppercase; letter-spacing: .1em;
+  font-size: 1.02rem; line-height: 1.2;
+}
+.brand span { display: block; font-family: var(--body); font-size: .68rem; letter-spacing: .18em; color: var(--pine); }
+
+.nav ul { display: flex; gap: 2rem; list-style: none; margin: 0; padding: 0; }
+.nav a {
+  font-family: var(--head); text-transform: uppercase;
+  letter-spacing: .13em; font-size: .82rem;
+  text-decoration: none; color: var(--ink);
+  padding-block: .35rem;
+  border-bottom: 2px solid transparent;
+}
+.nav a:hover { color: var(--pine-deep); border-bottom-color: var(--amber); }
+
+.nav-toggle {
+  display: none;
+  background: none; border: 1px solid var(--sand);
+  padding: .55rem .8rem; cursor: pointer;
+  font-family: var(--head); letter-spacing: .12em; font-size: .8rem;
+  text-transform: uppercase; color: var(--ink);
+}
+
+/* ---------- hero ---------- */
+
+.hero {
+  position: relative;
+  min-height: min(78vh, 660px);
+  display: grid; place-items: center;
+  text-align: center;
+  color: var(--cream);
+  padding-block: clamp(4rem, 10vw, 7rem);
+  background: var(--ink);
+  overflow: hidden;
+}
+.hero::before {
+  content: ''; position: absolute; inset: 0;
+  background: url('../assets/img/hero.jpg') center/cover no-repeat;
+  opacity: .5;
+}
+.hero::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(13,33,32,.5), rgba(13,33,32,.82));
+}
+.hero .wrap { position: relative; z-index: 1; }
+.hero .eyebrow { color: var(--sage); }
+.hero h1 {
+  font-size: clamp(2.4rem, 6.5vw, 4.4rem);
+  letter-spacing: .08em;
+}
+.hero p.tag {
+  font-family: var(--head); font-weight: 200;
+  text-transform: uppercase; letter-spacing: .2em;
+  font-size: clamp(.9rem, 2vw, 1.15rem);
+  color: var(--sand);
+  margin: 1.25rem 0 2.25rem;
+}
+.hero-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+/* ---------- entities ---------- */
+
+.entities { background: var(--sand); }
+.entities .grid {
+  display: grid; gap: 2.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  text-align: center;
+}
+.entities h3 { font-size: 1.35rem; color: var(--ink); }
+.entities .role {
+  font-size: .78rem; letter-spacing: .18em; text-transform: uppercase;
+  color: var(--pine); margin: .6rem 0 .9rem; font-family: var(--head);
+}
+.entities a { display: block; text-decoration: none; font-size: 1.05rem; color: var(--pine-deep); }
+.entities a:hover { text-decoration: underline; }
+
+/* ---------- about / split ---------- */
+
+.split {
+  display: grid; gap: clamp(2rem, 5vw, 4.5rem);
+  grid-template-columns: 1fr 1fr; align-items: center;
+}
+.split img { width: 100%; height: 100%; max-height: 460px; object-fit: cover; }
+
+/* ---------- services ---------- */
+
+.services { background: var(--pine-deep); color: var(--cream); }
+.services h2 { color: var(--cream); }
+.services .eyebrow { color: var(--sage); }
+.services .lede { color: var(--sand); }
+.services .grid {
+  display: grid; gap: 1.5rem; margin-top: 3rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+.card {
+  background: rgba(255,253,251,.07);
+  border: 1px solid rgba(219,218,208,.22);
+  padding: 2.25rem 1.85rem;
+}
+.card h3 { font-size: 1.2rem; margin-bottom: .9rem; }
+.card p { margin: 0; color: var(--sand); font-size: .97rem; }
+
+/* ---------- jobs ---------- */
+
+.jobs { background: var(--cream); }
+.downloads { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2.25rem; }
+
+/* ---------- contact ---------- */
+
+.contact { background: var(--sand); }
+.form { max-width: 640px; margin: 2.5rem auto 0; display: grid; gap: 1.1rem; }
+.form .row { display: grid; gap: 1.1rem; grid-template-columns: 1fr 1fr; }
+.form label {
+  font-family: var(--head); text-transform: uppercase;
+  letter-spacing: .14em; font-size: .74rem; color: var(--pine-deep);
+  display: block; margin-bottom: .4rem;
+}
+.form input, .form textarea {
+  width: 100%; font-family: var(--body); font-size: 1rem;
+  padding: .8rem .9rem; color: var(--ink);
+  background: var(--cream);
+  border: 1px solid #c3c2b8;
+}
+.form input:focus, .form textarea:focus {
+  outline: 2px solid var(--pine); outline-offset: -1px; border-color: var(--pine);
+}
+.form textarea { min-height: 150px; resize: vertical; }
+.form .btn { justify-self: center; }
+.form-note { text-align: center; font-size: .95rem; color: var(--pine-deep); min-height: 1.5rem; margin: 0; }
+
+/* ---------- footer ---------- */
+
+.site-footer { background: var(--ink); color: var(--sand); padding-block: 3.5rem 2rem; }
+.site-footer .grid {
+  display: grid; gap: 2.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+.site-footer h4 {
+  font-family: var(--head); text-transform: uppercase;
+  letter-spacing: .18em; font-size: .78rem; color: var(--sage);
+  margin: 0 0 .9rem; font-weight: 400;
+}
+.site-footer p { margin: 0 0 .35rem; font-size: .95rem; }
+.site-footer a { color: var(--sand); }
+.site-footer a:hover { color: var(--cream); }
+
+.social { display: flex; gap: 1rem; margin-top: .35rem; }
+.social a { display: inline-flex; }
+.social svg { width: 22px; height: 22px; fill: var(--sage); }
+.social a:hover svg { fill: var(--cream); }
+
+.legal {
+  margin-top: 3rem; padding-top: 1.5rem;
+  border-top: 1px solid rgba(219,218,208,.18);
+  text-align: center; font-size: .82rem; color: var(--grey);
+}
+
+/* ---------- responsive ---------- */
+
+@media (max-width: 860px) {
+  .split { grid-template-columns: 1fr; }
+  .split .media { order: -1; }
+  .nav-toggle { display: block; }
+  .nav {
+    display: none;
+    position: absolute; left: 0; right: 0; top: 100%;
+    background: var(--cream); border-bottom: 1px solid var(--sand);
+  }
+  .nav.open { display: block; }
+  .nav ul { flex-direction: column; gap: 0; padding: .5rem var(--pad) 1.25rem; }
+  .nav a { display: block; padding: .8rem 0; border-bottom: 1px solid var(--sand); }
+  .site-header .wrap { position: relative; }
+}
+
+@media (max-width: 560px) {
+  .form .row { grid-template-columns: 1fr; }
+  .brand span { display: none; }
+}
