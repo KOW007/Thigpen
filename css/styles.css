@@ -198,7 +198,10 @@ section { padding-block: clamp(3.5rem, 8vw, 6.5rem); }
 
 /* ---------- services ---------- */
 
-.services { background: var(--pine-deep); color: var(--cream); }
+.services {
+  background: var(--pine-deep); color: var(--cream);
+  padding-top: clamp(1.75rem, 3vw, 2.5rem);
+}
 .services h2 { color: var(--cream); }
 .services .eyebrow { color: var(--sage); }
 .services .lede { color: var(--sand); }
